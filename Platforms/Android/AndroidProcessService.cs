@@ -31,7 +31,20 @@ namespace MPM_App.Droid
 
         public void StopProcess(string pid)
         {
-            // Logic to stop the process (not directly possible in Android)
+            // Warning: Stopping processes can be risky and should be done with caution.
+            ActivityManager activityManager = (ActivityManager)Application.Context.GetSystemService(Context.ActivityService);
+
+            try
+            {
+                // Attempt to kill the process using the process ID
+                Android.OS.Process.KillProcess(Android.OS.Process.MyPid()); // This is just a placeholder
+                // You would need to properly find and kill the target process here
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions that occur during the process termination
+                System.Diagnostics.Debug.WriteLine($"Failed to stop process: {ex.Message}");
+            }
         }
     }
 }
