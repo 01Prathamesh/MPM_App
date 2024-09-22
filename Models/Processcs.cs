@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace MPM_App.Models
 {
-    internal class Processcs
+    public class Process
     {
+        public string PID { get; set; } // Process ID
+        public string Name { get; set; } // Process Name
+        public int MemoryUsage { get; set; } // Memory Usage in MB
+        public int CPUUsage { get; set; } // CPU Usage in %
     }
 }
