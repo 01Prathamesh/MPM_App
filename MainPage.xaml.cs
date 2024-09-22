@@ -10,27 +10,40 @@ namespace MPM_App
         public MainPage()
         {
             InitializeComponent();
-            Processes = new ObservableCollection<Process>
+            
+            // Initialize the ObservableCollection
+            Processes = new ObservableCollection<Process>();
+            
+            // Access the process service
+            var processService = DependencyService.Get<IProcessService>();
+            
+            // Retrieve running processes
+            var runningProcesses = processService.GetRunningProcesses();
+            
+            // Populate the ObservableCollection with the retrieved processes
+            foreach (var process in runningProcesses)
             {
-                new Process { PID = "1", Name = "Process 1", MemoryUsage = 100, CPUUsage = 10 },
-                new Process { PID = "2", Name = "Process 2", MemoryUsage = 200, CPUUsage = 20 },
-                new Process { PID = "3", Name = "Process 3", MemoryUsage = 150, CPUUsage = 15 }
-            };
+                Processes.Add(process);
+            }
 
+            // Set the ItemsSource of the CollectionView
             processListView.ItemsSource = Processes;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnStopButtonClicked(object sender, EventArgs e)
         {
             var button = sender as Button;
             var process = button.BindingContext as Process;
 
             if (process != null)
             {
+                // Remove the process from the ObservableCollection
                 Processes.Remove(process);
-                // Logic to stop the process would go here.
+
+                // Call the service to stop the process (if applicable)
+                var processService = DependencyService.Get<IProcessService>();
+                processService.StopProcess(process.PID); // Implement this in your service
             }
         }
     }
-
 }
