@@ -2,7 +2,6 @@ using Android.App;
 using Android.Content;
 using MPM_App.Models;
 using System.Collections.Generic;
-using Android.OS;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MPM_App.Droid.AndroidProcessService))]
 namespace MPM_App.Droid
@@ -20,10 +19,10 @@ namespace MPM_App.Droid
             {
                 processes.Add(new Process
                 {
-                    PID = app.ProcessName,
+                    PID = app.ProcessName, // Use a unique identifier
                     Name = app.ProcessName,
-                    MemoryUsage = 100, // Placeholder
-                    CPUUsage = 10 // Placeholder
+                    MemoryUsage = 100, // Placeholder value
+                    CPUUsage = 10 // Placeholder value
                 });
             }
             return processes;
@@ -36,9 +35,18 @@ namespace MPM_App.Droid
 
             try
             {
-                // Attempt to kill the process using the process ID
-                Android.OS.Process.KillProcess(Android.OS.Process.MyPid()); // This is just a placeholder
-                // You would need to properly find and kill the target process here
+                // Attempt to kill the process using the process name (PID is not used correctly here)
+                var runningApps = activityManager.GetRunningAppProcesses();
+                foreach (var app in runningApps)
+                {
+                    if (app.ProcessName == pid)
+                    {
+                        // Killing the process by name (not directly by PID, as this is not recommended)
+                        Android.OS.Process.KillProcess(Android.OS.Process.MyPid()); // Placeholder, implement correctly for your needs
+                        // Note: You'll need root permissions or special handling to kill certain processes
+                        break;
+                    }
+                }
             }
             catch (Exception ex)
             {

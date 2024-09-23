@@ -3,7 +3,7 @@
              x:Class="MPM_App.MainPage"
              Title="MPM App">
     <StackLayout Padding="10">
-        <Label Text="Foreground & Background Processes"
+        <Label Text="Foreground &amp; Background Processes"
                FontSize="24"
                HorizontalOptions="Center" />
 
