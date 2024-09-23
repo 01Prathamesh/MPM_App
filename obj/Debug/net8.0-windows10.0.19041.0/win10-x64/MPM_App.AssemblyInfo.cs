@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MPM_App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+57e8da5dc50b2b1ae49e9ab473b7878ddb2c158d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+1e82b2adf490b875e6870a857315816eae84f49f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MPM_App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MPM_App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
