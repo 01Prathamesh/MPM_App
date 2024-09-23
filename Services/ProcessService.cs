@@ -1,6 +1,9 @@
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Util;
 using MPM_App.Models;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace MPM_App.Services
 {
@@ -19,9 +22,18 @@ namespace MPM_App.Services
 
         public void StopProcess(string pid)
         {
-            // Implement logic to stop the process by PID
-            // This is a placeholder; replace with actual implementation
-            Debug.WriteLine($"Stopping process with PID: {pid}");
+            // Here you should implement actual logic to stop a process
+            try
+            {
+                var activityManager = (Activity)Application.Context.GetSystemService(Context.ActivityService);
+                // Warning: This requires appropriate permissions
+                activityManager.KillBackgroundProcesses(pid);
+                Log.Debug("ProcessService", $"Stopped process with PID: {pid}");
+            }
+            catch (System.Exception ex)
+            {
+                Log.Error("ProcessService", $"Error stopping process: {ex.Message}");
+            }
         }
     }
 }
