@@ -1,22 +1,27 @@
-using MAM_App.Models;
+using MPM_App.Models;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
-namespace MAM_App.Services
+namespace MPM_App.Services
 {
-    public class ProcessService
+    public class ProcessService : IProcessService
     {
-        public Task<List<ProcessModel>> GetProcessesAsync()
+        public List<Process> GetRunningProcesses()
         {
-            // Simulate fetching process data
-            var processes = new List<ProcessModel>
+            // Simulating fetching running processes
+            return new List<Process>
             {
-                new ProcessModel { ProcessName = "Process 1", Status = "Running" },
-                new ProcessModel { ProcessName = "Process 2", Status = "Stopped" },
-                new ProcessModel { ProcessName = "Process 3", Status = "Running" }
+                new Process { PID = "1234", Name = "Process 1", MemoryUsage = 150, CPUUsage = 10 },
+                new Process { PID = "5678", Name = "Process 2", MemoryUsage = 200, CPUUsage = 25 },
+                new Process { PID = "91011", Name = "Process 3", MemoryUsage = 300, CPUUsage = 5 }
             };
+        }
 
-            return Task.FromResult(processes);
+        public void StopProcess(string pid)
+        {
+            // Implement logic to stop the process by PID
+            // This is a placeholder; replace with actual implementation
+            Debug.WriteLine($"Stopping process with PID: {pid}");
         }
     }
 }
