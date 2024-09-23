@@ -47,5 +47,23 @@ namespace MPM_App
                 processService.StopProcess(process.PID); // Ensure this method is implemented in your service
             }
         }
+        
+        private async void LoadProcesses()
+        {
+            loadingIndicator.IsVisible = true;
+            loadingIndicator.IsRunning = true;
+
+            var processService = DependencyService.Get<IProcessService>();
+            var runningProcesses = await Task.Run(() => processService.GetRunningProcesses());
+
+            Processes.Clear();
+            foreach (var process in runningProcesses)
+            {
+                Processes.Add(process);
+            }
+
+            loadingIndicator.IsRunning = false;
+            loadingIndicator.IsVisible = false;
+        }
     }
 }
