@@ -1,5 +1,7 @@
-﻿using MPM_App.Models;
+﻿using MPM_App.Models; 
+using MPM_App.Services; 
 using System.Collections.ObjectModel;
+using Microsoft.Maui.Controls;
 
 namespace MPM_App
 {
@@ -14,7 +16,7 @@ namespace MPM_App
             // Initialize the ObservableCollection
             Processes = new ObservableCollection<Process>();
             
-            // Access the process service
+            // Access the process service using DependencyService
             var processService = DependencyService.Get<IProcessService>();
             
             // Retrieve running processes
@@ -42,7 +44,7 @@ namespace MPM_App
 
                 // Call the service to stop the process (if applicable)
                 var processService = DependencyService.Get<IProcessService>();
-                processService.StopProcess(process.PID); // Implement this in your service
+                processService.StopProcess(process.PID); // Ensure this method is implemented in your service
             }
         }
     }
