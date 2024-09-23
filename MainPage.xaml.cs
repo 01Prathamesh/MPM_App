@@ -32,19 +32,21 @@ namespace MPM_App
             processListView.ItemsSource = Processes;
         }
 
-        private void OnStopButtonClicked(object sender, EventArgs e)
+        private async void OnStopButtonClicked(object sender, EventArgs e)
         {
             var button = sender as Button;
             var process = button.BindingContext as Process;
 
             if (process != null)
             {
-                // Remove the process from the ObservableCollection
-                Processes.Remove(process);
-
-                // Call the service to stop the process (if applicable)
-                var processService = DependencyService.Get<IProcessService>();
-                processService.StopProcess(process.PID); // Ensure this method is implemented in your service
+                bool confirm = await DisplayAlert("Confirm", $"Are you sure you want to stop {process.Name}?", "Yes", "No");
+                
+                if (confirm)
+                {
+                    Processes.Remove(process);
+                    var processService = DependencyService.Get<IProcessService>();
+                    processService.StopProcess(process.PID);
+                }
             }
         }
         
