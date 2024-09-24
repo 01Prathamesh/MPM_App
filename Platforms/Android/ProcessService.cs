@@ -1,10 +1,8 @@
-#if Android
 using Android.App;
 using Android.Content;
 using Android.Util;
 using MPM_App.Models;
 using System.Collections.Generic;
-#endif
 
 namespace MPM_App.Services
 {
