@@ -23,7 +23,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0-android",
+          "net8.0-android34.0",
           "net8.0-ios",
           "net8.0-maccatalyst",
           "net8.0-windows10.0.19041.0"
@@ -35,7 +35,7 @@
         },
         "frameworks": {
           "net8.0-android34.0": {
-            "targetAlias": "net8.0-android",
+            "targetAlias": "net8.0-android34.0",
             "projectReferences": {}
           },
           "net8.0-ios17.5": {
@@ -64,7 +64,7 @@
       },
       "frameworks": {
         "net8.0-android34.0": {
-          "targetAlias": "net8.0-android",
+          "targetAlias": "net8.0-android34.0",
           "dependencies": {
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -250,7 +250,7 @@
         "android-x86": {
           "#import": []
         },
-        "iossimulator-x64": {
+        "ios-arm64": {
           "#import": []
         },
         "maccatalyst-x64": {

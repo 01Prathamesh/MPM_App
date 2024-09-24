@@ -11036,7 +11036,7 @@
         }
       }
     },
-    "net8.0-android34.0/iossimulator-x64": {
+    "net8.0-android34.0/ios-arm64": {
       "GoogleGson/2.10.1.4": {
         "type": "package",
         "compile": {
@@ -19762,7 +19762,7 @@
         }
       }
     },
-    "net8.0-ios17.5/iossimulator-x64": {
+    "net8.0-ios17.5/ios-arm64": {
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -23130,7 +23130,7 @@
         }
       }
     },
-    "net8.0-maccatalyst17.5/iossimulator-x64": {
+    "net8.0-maccatalyst17.5/ios-arm64": {
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -27183,7 +27183,7 @@
         }
       }
     },
-    "net8.0-windows10.0.19041/iossimulator-x64": {
+    "net8.0-windows10.0.19041/ios-arm64": {
       "Microsoft.Extensions.Configuration/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -33071,7 +33071,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0-android",
+        "net8.0-android34.0",
         "net8.0-ios",
         "net8.0-maccatalyst",
         "net8.0-windows10.0.19041.0"
@@ -33083,7 +33083,7 @@
       },
       "frameworks": {
         "net8.0-android34.0": {
-          "targetAlias": "net8.0-android",
+          "targetAlias": "net8.0-android34.0",
           "projectReferences": {}
         },
         "net8.0-ios17.5": {
@@ -33112,7 +33112,7 @@
     },
     "frameworks": {
       "net8.0-android34.0": {
-        "targetAlias": "net8.0-android",
+        "targetAlias": "net8.0-android34.0",
         "dependencies": {
           "Microsoft.Extensions.Logging.Debug": {
             "target": "Package",
@@ -33298,7 +33298,7 @@
       "android-x86": {
         "#import": []
       },
-      "iossimulator-x64": {
+      "ios-arm64": {
         "#import": []
       },
       "maccatalyst-x64": {

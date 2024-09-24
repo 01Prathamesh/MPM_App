@@ -1,6 +1,7 @@
 using Android.App;
 using Android.Content;
 using MPM_App.Models;
+using MPM_App.Services;
 using System.Collections.Generic;
 
 [assembly: Microsoft.Maui.Controls.Dependency(typeof(MPM_App.Droid.AndroidProcessService))]
