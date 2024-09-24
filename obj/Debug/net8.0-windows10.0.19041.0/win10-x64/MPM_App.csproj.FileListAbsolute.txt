@@ -1,0 +1,12 @@
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MPM_App.csproj.AssemblyReference.cache
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.inputs
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauisplash.inputs
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauimanifest.stamp
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.i.cs
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.cs
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlTypeInfo.g.cs
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xaml
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlSaveStateFile.xml
+K:\CareerD\MPM_App\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MPM_App.GeneratedMSBuildEditorConfig.editorconfig

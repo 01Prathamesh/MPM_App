@@ -10,16 +10,16 @@ namespace MPM_App.Droid
     {
         public List<Process> GetRunningProcesses()
         {
-            ActivityManager activityManager = (ActivityManager)Application.Context.GetSystemService(Context.ActivityService);
+            ActivityManager activityManager = (ActivityManager)Android.App.Application.Context.GetSystemService(Context.ActivityService);
             var runningApps = activityManager.GetRunningAppProcesses();
             var processes = new List<Process>();
 
-            foreach (var app in runningApps)
+            foreach (var service in runningServices)
             {
                 processes.Add(new Process
                 {
-                    PID = app.ProcessName,
-                    Name = app.ProcessName,
+                    PID = service.Process,
+                    Name = service.Service.PackageName, // Get the package name for the process
                     MemoryUsage = 100, // Placeholder
                     CPUUsage = 10 // Placeholder
                 });
