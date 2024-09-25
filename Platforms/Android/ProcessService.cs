@@ -25,7 +25,7 @@ namespace MPM_App.Platforms.Android
             try
             {
                 // Use Android's Application
-                var activityManager = (ActivityManager)Android.App.Application.Context.GetSystemService(Context.ActivityService);
+                var activityManager = (ActivityManager)global::Android.App.Application.Context.GetSystemService(Context.ActivityService);
 
                 // This requires the appropriate permissions in the Android manifest
                 activityManager.KillBackgroundProcesses(pid);
@@ -36,5 +36,6 @@ namespace MPM_App.Platforms.Android
                 Log.Error("ProcessService", $"Error stopping process: {ex.Message}");
             }
         }
+
     }
 }

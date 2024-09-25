@@ -9,24 +9,33 @@ namespace MPM_App.Droid
 {
     public class AndroidProcessService : IProcessService
     {
-        public List<Process> GetRunningProcesses()
+        public List<MPM_App.Models.Process> GetRunningProcesses()
         {
-            ActivityManager activityManager = (ActivityManager)Android.App.Application.Context.GetSystemService(Context.ActivityService);
-            var runningApps = activityManager.GetRunningAppProcesses();
-            var processes = new List<Process>();
+            var runningProcesses = new List<MPM_App.Models.Process>();
 
-            foreach (var service in runningServices)
+            var activityManager = (ActivityManager)Application.Context.GetSystemService(Context.ActivityService);
+
+            // Check if the method is available based on your API level
+            var appProcesses = activityManager.GetRunningAppProcesses();
+
+            if (appProcesses != null)
             {
-                processes.Add(new Process
+                foreach (var process in appProcesses)
                 {
-                    PID = service.Process,
-                    Name = service.Service.PackageName, // Get the package name for the process
-                    MemoryUsage = 100, // Placeholder
-                    CPUUsage = 10 // Placeholder
-                });
+                    runningProcesses.Add(new MPM_App.Models.Process
+                    {
+                        PID = process.Pid.ToString(),
+                        Name = process.ProcessName,
+                        // You may not be able to get MemoryUsage and CPUUsage directly for other apps
+                        MemoryUsage = 0, // Placeholder
+                        CPUUsage = 0 // Placeholder
+                    });
+                }
             }
-            return processes;
+
+            return runningProcesses;
         }
+
 
         public void StopProcess(string pid)
         {
