@@ -1,10 +1,11 @@
 using Android.App;
 using Android.Content;
 using Android.Util;
-using MPM_App.Models;
+using MPM_App.Models; 
+using MPM_App.Services;
 using System.Collections.Generic;
 
-namespace MPM_App.Services
+namespace MPM_App.Platforms.Android
 {
     public class ProcessService : IProcessService
     {
@@ -23,8 +24,9 @@ namespace MPM_App.Services
         {
             try
             {
-                var activityManager = (ActivityManager)Application.Context.GetSystemService(Context.ActivityService);
-                
+                // Use Android's Application
+                var activityManager = (ActivityManager)Android.App.Application.Context.GetSystemService(Context.ActivityService);
+
                 // This requires the appropriate permissions in the Android manifest
                 activityManager.KillBackgroundProcesses(pid);
                 Log.Debug("ProcessService", $"Stopped process with PID: {pid}");
