@@ -1,1 +1,0 @@
-K:\CareerD\MPM_App\MPM_App.csproj;x64

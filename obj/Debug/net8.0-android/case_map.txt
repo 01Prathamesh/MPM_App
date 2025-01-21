@@ -1,2 +1,0 @@
-images\icon;images\icon
-raw\aboutassets;raw\AboutAssets
